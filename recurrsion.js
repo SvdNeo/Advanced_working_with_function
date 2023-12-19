@@ -108,16 +108,24 @@ printList1(list)
 //task reversing the linked list
 
 
-function reverseLinkedList(list) {
-    let arr = [];
-    let temp = list;
-    while(temp){
-        arr.push(temp.value)
-        temp=temp.next
-    }
-    for(let i=arr.length-1;i>=0;i--){
-        console.log(arr[i])
-    }
-}
-reverseLinkedList(list)
+// function reverseLinkedList(list) {
+//     let arr = [];
+//     let temp = list;
+//     while(temp){
+//         arr.push(temp.value)
+//         temp=temp.next
+//     }
+//     for(let i=arr.length-1;i>=0;i--){
+//         console.log(arr[i])
+//     }
+// }
+// reverseLinkedList(list)
 
+function reverseLinkedList1(list){
+    
+    if(list.next){
+         reverseLinkedList1(list.next)
+    }
+    console.log(list.value)
+}
+reverseLinkedList1(list)
