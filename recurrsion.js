@@ -36,3 +36,14 @@ function sum3To(n){
     return n*(n+1)/2
 }
 console.log(sum3To(4))
+
+//factorial
+function fact(n){
+    if(n==1){
+        return n
+    }else{
+        return n * fact(n-1)
+    }
+
+}
+console.log(fact(4))
