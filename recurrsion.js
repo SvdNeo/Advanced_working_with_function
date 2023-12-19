@@ -95,3 +95,12 @@ function printList(list){
     }
 }
 printList(list)
+
+function printList1(list){
+    console.log(list.value)
+    if(list.next){
+        return printList1(list.next)
+    }
+
+}
+printList1(list)
