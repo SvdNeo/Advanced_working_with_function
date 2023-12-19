@@ -104,3 +104,20 @@ function printList1(list){
 
 }
 printList1(list)
+
+//task reversing the linked list
+
+
+function reverseLinkedList(list) {
+    let arr = [];
+    let temp = list;
+    while(temp){
+        arr.push(temp.value)
+        temp=temp.next
+    }
+    for(let i=arr.length-1;i>=0;i--){
+        console.log(arr[i])
+    }
+}
+reverseLinkedList(list)
+
