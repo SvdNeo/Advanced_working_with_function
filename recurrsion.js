@@ -46,4 +46,28 @@ function fact(n){
     }
 
 }
-console.log(fact(4))
+console.log(fact(5))
+
+//fibonacci
+function fib(n){
+    if(n<=1){
+        return n
+    }else{
+        return fib(n-1)+fib(n-2)
+    }
+}
+console.log(fib(5))// it consumes lot of time to calculate larger values 
+
+function fibb(n){
+    let x=1;
+    let y=1
+    for(let i=3;i<=n;i++){
+        let z= x+y
+        x=y
+        y=z
+
+    }
+    return y
+}
+console.log(fibb(77))
+
