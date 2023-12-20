@@ -46,3 +46,21 @@ function makeWorker() {
   
  console.log( counter2() ); // 0
  console.log( counter2() ); // 1 yes they are independent counters as they are produced by two different instances
+
+ //Counter object
+ function Counter() {
+    let count = 0;
+  
+    this.up = function() {
+      return ++count;
+    };
+    this.down = function() {
+      return --count;
+    };
+  }
+  
+  let counter1 = new Counter();
+  
+ console.log( counter1.up() ); // 1
+ console.log( counter1.up() ); // 2
+ console.log( counter1.down() ); // 1
