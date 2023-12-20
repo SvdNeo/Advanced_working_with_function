@@ -64,3 +64,42 @@ function makeWorker() {
  console.log( counter1.up() ); // 1
  console.log( counter1.up() ); // 2
  console.log( counter1.down() ); // 1
+
+ //Function in if
+
+ let phrase = "Hello";
+
+if (true) {
+  let user = "John";
+
+  function sayHi() {
+   console.log(`${phrase}, ${user}`);
+  }
+}
+
+sayHi();
+//In the provided code, there is an attempt to call the sayHi() function outside of its scope, which will result in an error. 
+//The sayHi() function is defined inside an if block, and variables declared with let have block scope, meaning they are only accessible within the block where they are defined.
+
+let phrase1 = "Hello";
+let user1; // declare user outside the if block
+
+if (true) {
+  user1 = "John"; // assign a value to user inside the if block
+
+  function sayHi() {
+    console.log(`${phrase}, ${user1}`);
+  }
+}
+
+sayHi(); // Now, sayHi() can access the user variable
+//Now, the user variable is declared outside the if block, and its value is assigned inside the block. This way, the sayHi() function can access the user variable, and calling sayHi() after the if block will work without an error.
+
+
+//Sum with closures
+function sum(a){
+return function(b){
+    return a+b
+}
+}
+console.log(sum(4)(5))
