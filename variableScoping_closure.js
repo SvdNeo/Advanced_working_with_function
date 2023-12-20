@@ -28,3 +28,21 @@ function makeWorker() {
   work(); // what will it show? The answer is: Pete.
 
   //The work() function in the code below gets name from the place of its origin through the outer lexical environment reference
+
+  //Are counters independent?
+  function makeCounter() {
+    let count = 0;
+  
+    return function() {
+      return count++;
+    };
+  }
+  
+  let counter = makeCounter();
+  let counter2 = makeCounter();
+  
+ console.log( counter() ); // 0
+ console.log( counter() ); // 1
+  
+ console.log( counter2() ); // 0
+ console.log( counter2() ); // 1 yes they are independent counters as they are produced by two different instances
