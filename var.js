@@ -54,3 +54,28 @@ function sayHi() {
   +function(){
     console.log("Fourth type IIFE")
   }();
+
+  for (var i = 1; i <= 5; i++) {
+    console.log(`Iteration ${i}`);
+  }
+  
+  console.log(`Outside loop: ${i}`); 
+
+  globalThis.console.log("Hi")
+
+  var gVar = 5;
+global.gVar = gVar;
+
+console.log(global.gVar); // This will log '5' in a Node.js environment
+
+let gLet = 5;
+global.gLet = gLet;
+
+console.log(global.gLet); // This will log '5' in a Node.js environment
+
+globalThis.obj = {
+    name:"sanjay"
+}
+console.log(obj)
+
+
