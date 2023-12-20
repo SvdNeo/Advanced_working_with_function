@@ -104,12 +104,35 @@ return function(b){
 }
 console.log(sum(4)(5))
 
+
+//Is variable visible?
 let x = 1;
 
 function func() {
-  console.log(x); // ?
+  //console.log(x); // ?
 
   let x = 2;
 }
 
 func();// here the x will be hoisted i.e variable declaration is hoisted but not the assignment therefore there will be reference error
+
+//Filter through function
+function inBetween(a,b){
+    return function(x){
+        if(x>=a && x<=b){
+            return x
+        }
+    }
+}
+let arr = [1, 2, 3, 4, 5, 6, 7];
+console.log( arr.filter(inBetween(3, 6)) );
+
+function filter(arr1){
+    return function(x){
+       let arr2= arr1.includes(x)
+       console.log(arr2)
+       return arr2
+    }
+}
+let arr1 = [1, 2, 3, 4, 5, 6, 7];
+console.log( arr1.filter(filter([1, 2, 10])) );
