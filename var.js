@@ -28,3 +28,29 @@ function sayHi() {
    console.log(phrase);
   }
   sayHi();
+  //IIFE
+  (function() {
+
+    var message = "Hello";
+  
+   console.log(message); // Hello
+  
+  })();
+
+  (function sum(a,b){
+    return a+b
+  })(5,6);
+
+  (function(){
+    console.log("first type IIFE")
+  })();
+  (function(){
+    console.log("second type IIFE")
+  }());
+  !function(){
+    console.log("Third type IIFE")
+  }();
+
+  +function(){
+    console.log("Fourth type IIFE")
+  }();
