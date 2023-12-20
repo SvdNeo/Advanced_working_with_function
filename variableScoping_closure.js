@@ -103,3 +103,13 @@ return function(b){
 }
 }
 console.log(sum(4)(5))
+
+let x = 1;
+
+function func() {
+  console.log(x); // ?
+
+  let x = 2;
+}
+
+func();// here the x will be hoisted i.e variable declaration is hoisted but not the assignment therefore there will be reference error
