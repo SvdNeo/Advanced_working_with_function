@@ -18,3 +18,10 @@ let timed = setInterval(() => {
 }, 5000);
 clearInterval(timed)
 
+
+//Nested setTimeout
+let timer = setTimeout(function tick(){
+    console.log("times up!")
+    timer = setTimeout(tick,2000)
+},2000)
+
