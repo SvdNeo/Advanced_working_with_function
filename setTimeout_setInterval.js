@@ -47,5 +47,31 @@ function requestData() {
   let lastInterval; // Variable to store the last interval
   
   // Initial request
-  setTimeout(requestData, 1000);
-  
+  //setTimeout(requestData, 1000);
+
+  // task 1
+  //by using setInterval
+  function print(from,to){
+    let current = from;
+   let timerId = setInterval(() => {
+    console.log(current);
+    if(current == to){
+      clearInterval(timerId)
+    }
+    current++
+   }, 1000);
+  }
+  print(5,10)
+
+  //by using nested setTimeout
+  function printNum(from,to){
+    let cur = from;
+    setTimeout(function start(){
+      console.log(cur);
+      if(cur<to){
+        setTimeout(start,1000)
+      }
+      cur++
+    })
+  }
+printNum(1,4)
