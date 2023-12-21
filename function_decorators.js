@@ -28,7 +28,7 @@ function spy(func) {
 
  let user = {
     name:"Sanjay",
-    sayHi(){
+    sayHi:function(){
         console.log(`${this.name}`)
     }
  }
@@ -36,3 +36,14 @@ function spy(func) {
     user.sayHi()
  }, 1000);
  
+
+ let user2 = {
+    teamName:"Indian",
+    matchPlayed:25
+     }
+     function statistics(team,year){
+        console.log(`The ${this.teamName}cricket team has played ${this.matchPlayed} matches against ${team} in the year ${year}`)
+     }
+     let output = statistics.bind(user2,"Australia",2023)
+     output()
+     
