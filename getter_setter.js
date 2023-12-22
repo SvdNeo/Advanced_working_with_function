@@ -31,3 +31,30 @@ function User(name,birthday){
 let newUser = new User("Sanjay", new Date(1992, 6, 1));
 console.log(newUser.birthday);
 console.log(newUser.age)
+console.log(newUser)
+
+function User2(name2,birthday2){
+  this.name2 = name2;
+  this.birthday2 = birthday2;
+  Object.defineProperty(this,"age2",{
+    get(){
+      return new Date().getFullYear()-this.birthday2.getFullYear()
+    }
+  })
+
+}
+let newUser1 = new User2("Sanjay", new Date(1992, 6, 1));
+console.log(newUser1.age2)
+console.log(newUser1)
+
+function teams(name,country){
+  this.name = name;
+  this.country = country;
+  Object.defineProperty(this,"won",{
+    get(){
+      return "Twenty matches"
+    }
+  })
+}
+const newTeam = new teams("Virat","India")
+console.log(newTeam.won)
