@@ -57,4 +57,24 @@ function teams(name,country){
   })
 }
 const newTeam = new teams("Virat","India")
-console.log(newTeam.won)
+console.log(newTeam.won);
+
+let user4 = {
+  name: "John",
+  surname: "Smith"
+};
+
+Object.defineProperty(user4, 'fullName', {
+  get() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set(value) {
+    [this.name, this.surname] = value.split(" ");
+  }
+});
+
+
+user4.fullName = "Sanjay Dambal"
+console.log(user4.name)
+console.log(user4.surname)
